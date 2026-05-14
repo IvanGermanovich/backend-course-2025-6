@@ -1,0 +1,23 @@
+{
+  "info": {
+    "name": "Inventory API Collection",
+    "_postman_id": "inventory-api-demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Inventory",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/inventory"
+      }
+    },
+    {
+      "name": "Register Item",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:3000/register"
+      }
+    }
+  ]
+}

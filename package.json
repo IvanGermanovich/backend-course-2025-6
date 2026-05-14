@@ -1,0 +1,22 @@
+{
+  "name": "backend-course-2025-6",
+  "version": "1.0.0",
+  "description": "Inventory service laboratory work",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js --host localhost --port 3000 --cache ./cache",
+    "dev": "nodemon server.js --host localhost --port 3000 --cache ./cache"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "superagent": "^10.1.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
