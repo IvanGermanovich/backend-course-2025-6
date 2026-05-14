@@ -247,6 +247,10 @@ app.get("/search", (req, res) => {
   res.status(200).json(response);
 });
 
+app.get("/", (req, res) => {
+  res.send("Inventory Service is running");
+});
+
 app.use((req, res) => {
   res.status(405).json({ error: "Method not allowed" });
 });

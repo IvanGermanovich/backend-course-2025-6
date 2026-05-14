@@ -6,18 +6,129 @@
   },
   "item": [
     {
-      "name": "Get Inventory",
+      "name": "Get All Inventory",
       "request": {
         "method": "GET",
         "url": "http://localhost:3000/inventory"
       }
     },
     {
+      "name": "Get Item by ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/inventory/{{item_id}}"
+      },
+      "variable": [
+        {
+          "key": "item_id",
+          "value": "enter-item-id-here"
+        }
+      ]
+    },
+    {
+      "name": "Get Item Photo",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/inventory/{{item_id}}/photo"
+      },
+      "variable": [
+        {
+          "key": "item_id",
+          "value": "enter-item-id-here"
+        }
+      ]
+    },
+    {
       "name": "Register Item",
       "request": {
         "method": "POST",
-        "url": "http://localhost:3000/register"
+        "url": "http://localhost:3000/register",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "inventory_name",
+              "value": "Sample Item",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": "This is a sample inventory item",
+              "type": "text"
+            },
+            {
+              "key": "photo",
+              "type": "file",
+              "value": "<select-image-file>"
+            }
+          ]
+        }
       }
+    },
+    {
+      "name": "Update Item",
+      "request": {
+        "method": "PUT",
+        "url": "http://localhost:3000/inventory/{{item_id}}",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"inventory_name\": \"Updated Name\", \"description\": \"Updated description\"}"
+        }
+      },
+      "variable": [
+        {
+          "key": "item_id",
+          "value": "enter-item-id-here"
+        }
+      ]
+    },
+    {
+      "name": "Update Item Photo",
+      "request": {
+        "method": "PUT",
+        "url": "http://localhost:3000/inventory/{{item_id}}/photo",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "photo",
+              "type": "file",
+              "value": "<select-image-file>"
+            }
+          ]
+        }
+      },
+      "variable": [
+        {
+          "key": "item_id",
+          "value": "enter-item-id-here"
+        }
+      ]
+    },
+    {
+      "name": "Delete Item",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:3000/inventory/{{item_id}}"
+      },
+      "variable": [
+        {
+          "key": "item_id",
+          "value": "enter-item-id-here"
+        }
+      ]
     }
   ]
 }
